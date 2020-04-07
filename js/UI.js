@@ -29,19 +29,28 @@ startMap() {
         this.api.getData()
             .then(data => {
 
-               console.log(data);
-                const result = data.answerJson.data;
-
-                this.showPins(result);
+               //console.log(data);
+               const result = data.answerJson;
+   
+               this.showPins(result);
             })
     }
 
     showPins(data) {
-        //clean markers
-        this.markers.clearLayers();
+       console.log(data);
 
-        data.forEach(data => {
-            //const {}
-        })
+        //clean markers
+        //this.markers.clearLayers();
+
+       // const {data:{direci_n}} = data;
+
+        //data.forEach(data => {
+          //  const {data:{direci_n}} = data;
+            
+            //console.log(data);
+            //const marker = new L.marker([
+              //  parseFloat(coordenadas_x_y)
+           // ]);
+       // })
     } 
 }
