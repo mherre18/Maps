@@ -4,7 +4,7 @@ class UI {
         this.api = new API();
 
         //markers = layergroup
-        this.markers = new L.LayerGroup();
+        this.markers = new L.layerGroup();
 
         this.map = this.startMap();
     }
@@ -37,7 +37,7 @@ startMap() {
     }
 
     showPins(data) {
-
+        L.marker([6.2237119999999999, -75.597740999999999]).addTo(this.map);
        //console.log(data);
         // clean markers
         //this.markers.clearLayers();
@@ -46,9 +46,18 @@ startMap() {
         const { latitud_y } = data;
 
             if(latitud_y === undefined || latitud_y === null) {
-                console.log('No adress');
+               console.log('No adress');
             } else {
+                
                 console.log(latitud_y);
+
+                const marker = new L.marker([latitud_y.latitude, latitud_y.longitude]).addTo(this.map);
+                  //  parseFloat(latitud_y.latitude),
+                   // parseFloat(latitud_y.longitude)
+               // ]);
+
+               // this.markers.addLayer(marker);
+               // console.log(this.markers);
             }
         
 
@@ -69,6 +78,7 @@ startMap() {
          //  this.markers.addLayer(marker);
      })
 
-       // this.markers.addTo(this.map);
+      //this.markers.addTo(this.map);
+      
   } 
 }
