@@ -45,7 +45,12 @@ startMap() {
         data.forEach(data => {
         const { latitud_y } = data;
 
-        console.log(latitud_y);
+            if(latitud_y === undefined || latitud_y === null) {
+                console.log('No adress');
+            } else {
+                console.log(latitud_y);
+            }
+        
 
          //latitud_y.compacta = function(){
            //  for(var i = 0; i < this.length; i++){
