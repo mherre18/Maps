@@ -37,20 +37,33 @@ startMap() {
     }
 
     showPins(data) {
-       console.log(data);
 
-        //clean markers
+       //console.log(data);
+        // clean markers
         //this.markers.clearLayers();
+        
+        data.forEach(data => {
+        const { latitud_y } = data;
 
-       // const {data:{direci_n}} = data;
+        console.log(latitud_y);
 
-        //data.forEach(data => {
-          //  const {data:{direci_n}} = data;
-            
-            //console.log(data);
-            //const marker = new L.marker([
-              //  parseFloat(coordenadas_x_y)
-           // ]);
-       // })
-    } 
+         //latitud_y.compacta = function(){
+           //  for(var i = 0; i < this.length; i++){
+             //    if(this[i] === undefined){
+               //      this.splice(i , 1);
+                // }
+            // }
+         //}
+         // latitud_y.compacta();  
+          //console.log(latitud_y);
+        
+        //  const marker = new L.marker([
+            //  parseFloat(latitud_y.latitude),
+            //  parseFloat(latitud_y.longitude)
+         // ]);
+         //  this.markers.addLayer(marker);
+     })
+
+       // this.markers.addTo(this.map);
+  } 
 }

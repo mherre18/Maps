@@ -1,7 +1,7 @@
 class API {
     async getData() {
 
-        //const total = 50;
+        //const total = 107;
         //get data from api
 
         const data = await fetch('https://www.datos.gov.co/resource/kkkb-uzjh.json');
