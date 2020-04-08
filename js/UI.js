@@ -37,13 +37,13 @@ startMap() {
     }
 
     showPins(data) {
-        L.marker([6.2237119999999999, -75.597740999999999]).addTo(this.map);
+       // L.marker([6.2237119999999999, -75.597740999999999]).addTo(this.map);
        //console.log(data);
         // clean markers
-        //this.markers.clearLayers();
+        this.markers.clearLayers();
         
         data.forEach(data => {
-        const { latitud_y } = data;
+        const { latitud_y, direcci_n, nombre_del_sitio } = data;
 
             if(latitud_y === undefined || latitud_y === null) {
                console.log('No adress');
@@ -51,7 +51,12 @@ startMap() {
                 
                 console.log(latitud_y);
 
-                const marker = new L.marker([latitud_y.latitude, latitud_y.longitude]).addTo(this.map);
+                const popUpOptions = L.popup()
+                .setContent(`<p>Calle: ${direcci_n}</p>
+                             <p><b>Nombre:</b> ${nombre_del_sitio}</p>   
+                `);
+
+                const marker = new L.marker([latitud_y.latitude, latitud_y.longitude]).addTo(this.map).bindPopup(popUpOptions);
                   //  parseFloat(latitud_y.latitude),
                    // parseFloat(latitud_y.longitude)
                // ]);
